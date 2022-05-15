@@ -12,6 +12,9 @@ the post screen and the comments screen.
   c. User should be able to delete a single comment Base endpoints that should be used by the screen
 
 
+
+
+
 Posts:
 
 ![alt image](/mb-views/posts.png)
