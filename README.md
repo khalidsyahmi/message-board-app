@@ -14,9 +14,9 @@ the post screen and the comments screen.
 
 Posts:
 
-![alt image](/mb views/posts.png)
+![alt image](/mb-views/posts.png)
 
 
 Comments:
 
-![alt image](/mb views/comments.png)
+![alt image](/mb-views/comments.png)
