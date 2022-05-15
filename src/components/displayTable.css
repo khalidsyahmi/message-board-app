@@ -1,0 +1,23 @@
+h1 {
+  text-align: center;
+  margin: 1rem;
+  padding: 2rem 1rem;
+}
+
+.container {
+  background-color: rgb(255, 170, 0);
+  padding: 1.5rem;
+  border-radius: 50px;
+}
+
+.table {
+  background-color: aquamarine;
+}
+
+thead {
+  background-color: dodgerblue;
+}
+
+/* .btn-danger {
+  display: flex;
+} */
