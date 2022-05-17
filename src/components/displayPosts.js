@@ -35,10 +35,11 @@ class Posts extends React.Component {
             //entire array
             list: posts,
             //specific array item
-            bundle: posts.any
+            check: posts.any,
+            //flag
+            bundle: true
         })
 
-        console.log(posts);
         return posts;
     }
 
@@ -46,27 +47,40 @@ class Posts extends React.Component {
 
         let tb_data = this.state.list.map((item) => {
 
+            /* const [item, setTitle] = useState(item.title); */
+
+            /* const { bundle } = this.state; */
+
             //click handler function
             const handleClick = () => {
 
                 //wierd setState
-                this.setState({ any: item.id = '' })
-                this.setState({ any: item.userId = '' })
-                this.setState({ any: item.title = '' })
-                this.setState({ any: item.body = '' })
+                this.setState({ check: item.id = undefined })
+                this.setState({ check: item.userId = undefined })
+                this.setState({ check: item.title = undefined })
+                this.setState({ check: item.body = undefined })
+
+                /* this.setState({ bundle: !this.state.bundle }) */
             }
 
             return (
                 /* key={item.userId} removed */
+                /* there are two userId here */
+
                 <tr>
                     <td>{item.id}</td>
                     <td>{item.userId}</td>
                     <td>{item.title}</td>
                     <td>{item.body}</td>
+                    {/* <td>{bundle ? item.userId : undefined}</td> */}
+                    {/* {bundle ? <td>{item.title}</td> : <td></td>} */}
+                    {/* <td>{bundle ? item.title : undefined}</td> */}
+                    {/* <td>{bundle ? item.body : undefined}</td> */}
                     <td>
-                        <button className="btn btn-danger" onClick={handleClick}>Remove</button>
+                        <button name={item.userId} className="btn btn-danger" onClick={handleClick}>Remove</button>
                     </td>
                 </tr>
+
             )
         })
 
