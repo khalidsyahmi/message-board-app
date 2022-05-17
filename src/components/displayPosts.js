@@ -8,7 +8,8 @@ class Posts extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            list: []
+            list: [],
+            /*  bundle: [] */
         }
         this.getAllUserId = this.getAllUserId.bind(this)
         this.getAllUserId();
@@ -31,8 +32,10 @@ class Posts extends React.Component {
 
         //
         this.setState({
+            //entire array
             list: posts,
-            next: posts.any
+            //specific array item
+            bundle: posts.any
         })
 
         console.log(posts);
@@ -45,10 +48,12 @@ class Posts extends React.Component {
 
             //click handler function
             const handleClick = () => {
-                this.setState({ next: item.id = '' })
-                this.setState({ next: item.userId = '' })
-                this.setState({ next: item.title = '' })
-                this.setState({ next: item.body = '' })
+
+                //wierd setState
+                this.setState({ any: item.id = '' })
+                this.setState({ any: item.userId = '' })
+                this.setState({ any: item.title = '' })
+                this.setState({ any: item.body = '' })
             }
 
             return (
