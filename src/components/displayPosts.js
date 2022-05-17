@@ -49,7 +49,7 @@ class Posts extends React.Component {
 
             /* const [item, setTitle] = useState(item.title); */
 
-            /* const { bundle } = this.state; */
+            const { bundle } = this.state;
 
             //click handler function
             const handleClick = () => {
@@ -60,28 +60,34 @@ class Posts extends React.Component {
                 this.setState({ check: item.title = undefined })
                 this.setState({ check: item.body = undefined })
 
-                /* this.setState({ bundle: !this.state.bundle }) */
+                this.setState({ bundle: !this.state.bundle })
             }
 
-            return (
-                /* key={item.userId} removed */
-                /* there are two userId here */
-
+            if ({ bundle }) {
+                return (
+                    /* key={item.userId} removed */
+                    /* there are two userId here */
+                    <tr>
+                        <td>{item.id}</td>
+                        <td>{item.userId}</td>
+                        <td>{item.title}</td>
+                        <td>{item.body}</td>
+                        {/* <td>{bundle ? item.userId : undefined}</td> */}
+                        {/* {bundle ? <td>{item.title}</td> : <td></td>} */}
+                        {/* <td>{bundle ? item.title : undefined}</td> */}
+                        {/* <td>{bundle ? item.body : undefined}</td> */}
+                        <td>
+                            <button name={item.userId} className="btn btn-danger" onClick={handleClick}>Remove</button>
+                        </td>
+                    </tr>
+                )
+            } else {
                 <tr>
-                    <td>{item.id}</td>
-                    <td>{item.userId}</td>
-                    <td>{item.title}</td>
-                    <td>{item.body}</td>
-                    {/* <td>{bundle ? item.userId : undefined}</td> */}
-                    {/* {bundle ? <td>{item.title}</td> : <td></td>} */}
-                    {/* <td>{bundle ? item.title : undefined}</td> */}
-                    {/* <td>{bundle ? item.body : undefined}</td> */}
-                    <td>
-                        <button name={item.userId} className="btn btn-danger" onClick={handleClick}>Remove</button>
-                    </td>
+                    <td></td>
                 </tr>
+            }
 
-            )
+
         })
 
         return (
