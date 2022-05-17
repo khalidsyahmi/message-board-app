@@ -1,5 +1,3 @@
-//import ExpenseDate from './expenseDate';
-//import { render } from '@testing-library/react';
 import React from "react";
 import './displayTable.css';
 

@@ -1,11 +1,10 @@
-//import ExpenseDate from './expenseDate';
-//import { render } from '@testing-library/react';
-import React from "react";
+import React, { useState } from "react";
 import './displayTable.css';
 
 
 class Posts extends React.Component {
 
+    //idk how this constructor or super works...
     constructor(props) {
         super(props)
         this.state = {
@@ -30,8 +29,10 @@ class Posts extends React.Component {
             }
         });
 
+        //
         this.setState({
-            list: posts
+            list: posts,
+            next: posts.any
         })
 
         console.log(posts);
@@ -39,19 +40,28 @@ class Posts extends React.Component {
     }
 
     render() {
-        let tb_data = this.state.list.map((item) => {
-            return (
 
-                <tr key={item.userId}>
+        let tb_data = this.state.list.map((item) => {
+
+            //click handler function
+            const handleClick = () => {
+                this.setState({ next: item.id = '' })
+                this.setState({ next: item.userId = '' })
+                this.setState({ next: item.title = '' })
+                this.setState({ next: item.body = '' })
+            }
+
+            return (
+                /* key={item.userId} removed */
+                <tr>
                     <td>{item.id}</td>
                     <td>{item.userId}</td>
                     <td>{item.title}</td>
                     <td>{item.body}</td>
                     <td>
-                        <button className="btn btn-danger">Remove</button>
+                        <button className="btn btn-danger" onClick={handleClick}>Remove</button>
                     </td>
                 </tr>
-
             )
         })
 
